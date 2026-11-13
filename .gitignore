@@ -1,0 +1,34 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.ruff_cache/
+.DS_Store
+
+# Local database and run artefacts
+buildalpha_cache.sqlite3
+*.sqlite3
+*.sqlite3.bak-*
+logs/
+mcp.log*
+Data/
+buildalpha_status.json
+buildalpha_status.history.jsonl
+continuous-pending.json
+scripts/continuous-pending.json
+scripts/_lock_holder.ps1
+sweep*.log
+sweep*.err.log
+verify-grid-rows-*.txt
+*.plan.json
+
+# Live captures stay out of git. The four fixtures are the only exceptions.
+captures/*
+!captures/README.md
+!captures/kraken-SOLUSD-15m-Long.txt
+!captures/kraken-XXBTZUSD-1h-Long.txt
+!captures/grid-SOLUSD-15m-Long.txt
+!captures/grid-XXBTZUSD-1h-Long.txt
+!captures/screens/
+captures/screens/*
+!captures/screens/.gitkeep

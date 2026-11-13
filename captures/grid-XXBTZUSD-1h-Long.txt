@@ -1,0 +1,36 @@
+# row=8810 symbol=XXBTZUSD_1h type=Long
+Avg Trade	584.94
+CAGR	29.83
+Corr Coef	0.797
+CPC Ratio	1.27
+Custom Fitness	0.00
+Drawdown	13557.02
+Drawdown MTM	10999.83
+ECurve	System.Collections.Generic.List`1[System.Single]
+E-Ratio	0.98
+Exit Params	PT 2.00 atr, SL 3.00 atr, Exit on All: close[0] < sma(close,20)[0], rsi(14)[0] > 70
+Expectancy Score	0.65
+Index	ALL
+K-Ratio	0.101054
+Live Position	
+Mean L trades	1518.67
+Mean W trades	951.47
+Name	close[0] > sma(close,20)[0], rsi(14)[0] < 30, atr(14)[0] > atr(14)[1]
+Net P&L	32729.68
+P&L / DD	6.85
+Perfect Profit Correlation	0.95
+Perfect Profit Percentage	0.21
+Profit Factor	2.44
+Ratio WL	1.60
+Sharpe	0.32
+SQM	2.31
+SQN	2.50
+State	Offline
+Std L trades	950.24
+Std W trades	1162.55
+Symbol	XXBTZUSD_1h
+Trades	252
+T-Test	1.79
+Type	Long
+Win Percentage	0.527
+X	Checked

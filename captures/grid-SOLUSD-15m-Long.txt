@@ -1,0 +1,36 @@
+# row=8809 symbol=SOLUSD_15m type=Long
+Avg Trade	54.18
+CAGR	32.00
+Corr Coef	0.611
+CPC Ratio	1.61
+Custom Fitness	0.00
+Drawdown	12531.68
+Drawdown MTM	8302.53
+ECurve	System.Collections.Generic.List`1[System.Single]
+E-Ratio	1.16
+Exit Params	PT 2.00 atr, SL 3.00 atr, Exit on All: close[0] < sma(close,20)[0], rsi(14)[0] > 70
+Expectancy Score	0.74
+Index	ALL
+K-Ratio	0.055940
+Live Position	
+Mean L trades	753.89
+Mean W trades	1030.00
+Name	close[0] > sma(close,20)[0], rsi(14)[0] < 30, atr(14)[0] > atr(14)[1]
+Net P&L	45122.54
+P&L / DD	5.46
+Perfect Profit Correlation	0.97
+Perfect Profit Percentage	0.48
+Profit Factor	2.20
+Ratio WL	1.17
+Sharpe	2.01
+SQM	2.59
+SQN	2.18
+State	Offline
+Std L trades	1000.16
+Std W trades	1155.61
+Symbol	SOLUSD_15m
+Trades	258
+T-Test	3.29
+Type	Long
+Win Percentage	0.364
+X	Checked
