@@ -626,13 +626,13 @@ python -m strategy_cache.mcp_server --sse --host 0.0.0.0 --port 8080 \
 
 That serves the SSE endpoint at `http://<host>:8080/sse` (messages are POSTed to
 `/messages/?session_id=...`), so on the tailnet it is reachable at
-**`http://w-prod:8080/sse`**. `--host` defaults to `0.0.0.0` and `--port` to
+**`http://my-box:8080/sse`**. `--host` defaults to `0.0.0.0` and `--port` to
 `8080`; `--sse` selects this transport. uvicorn's access log is redirected to
 stderr, so stdout stays empty.
 
 Note: the SSE transport has no authentication and no DNS-rebinding protection
 (`MCPServer` only auto-enables that when bound to localhost) - that is what
-keeps a tailnet name like `w-prod:8080` working. Restrict reachability with
+keeps a tailnet name like `my-box:8080` working. Restrict reachability with
 tailnet ACLs / host firewall; the tools are read-only but expose the portfolio.
 
 ### Action tools (opt-in)

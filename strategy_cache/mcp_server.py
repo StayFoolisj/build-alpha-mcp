@@ -1134,8 +1134,8 @@ def main(argv: list[str] | None = None) -> int:
     )
 
     if args.sse:
-        # transport_security=None is what MCPServer uses for non-localhost hosts;
-        # it keeps a tailnet name such as w-prod:8080 reachable.
+        # MCPServer uses transport_security=None for a non-localhost host.
+        # That keeps a tailnet name such as my-box:8080 reachable.
         _uvicorn_logs_to_stderr()
         log.info(
             "serving %s read-only (schema %s) over SSE at http://%s:%d/sse",
