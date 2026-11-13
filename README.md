@@ -27,6 +27,36 @@ The app has no API. Everything here reads the real controls: no hand-typed scree
 
 The full table, with commands and outputs, sits in [`docs/manual.md`](docs/manual.md).
 
+## Sample prompts
+
+Three requests, from a two-minute check to an overnight search. Copy one, or say it out loud. The client takes voice input, so a dictated request works the same way.
+
+### Test one idea
+
+*Prompt: quick idea*
+
+```text
+Test this idea on ES 60-minute bars from 2010 to today: go long when the close is below the lowest close of the prior 5 bars and the 200-bar SMA is rising. Exit after 4 bars or at a 2 ATR stop. Show me the equity curve, profit factor, trade count and max drawdown, then run the Noise Test and Vs Random on it.
+```
+
+### Run a massive search with robustness gates
+
+*Prompt: overnight search*
+
+```text
+Run a genetic search on ES, NQ, CL and GC 60-minute bars from 2010 to one year ago from today. Use the full signal library plus COT and VIX contango data, max 3 rules, long strategies, fitness Net PNL. Set up a 3-round Sequence Workflow: round 1 keeps strategies with 300+ trades and positive P&LDD above 4; round 2 requires passing Vs Random and the Noise Test according to the Taguchi method blog; round 3 requires a final out-of-sample period on the last one year of data with passing strategies showing net profit. Advance when 500 strategies pass round 1 or after 8 hours. Export trade lists and NinjaTrader code for every survivor to my Research folder.
+```
+
+### Ask where a setting lives
+
+*Prompt: quick question*
+
+```text
+Where do I change the date range and out-of-sample period for round 2 of my Sequence Workflow?
+```
+
+The last prompt is the smallest use: one question, then back to the app. The first two show the range of the tool. The second one chains the sequence gates, the robustness tests, and the code export in one request.
+
 ## Requirements
 
 - Windows 10 or newer, with Build Alpha installed. The scripts resolve the install directory from the uninstall registry entry.
