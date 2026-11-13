@@ -1488,6 +1488,10 @@ def test_38_ui_lock_is_exclusive() -> None:
         "Start-Sleep -Seconds 3\n",
         encoding="utf-8",
     )
+    # The lock file must exist before the probe can tell "free" from "not created yet".
+    lock_path = root / "logs" / "ui.lock"
+    lock_path.parent.mkdir(parents=True, exist_ok=True)
+    lock_path.touch(exist_ok=True)
     try:
         first = subprocess.Popen(["powershell", "-NoProfile", "-ExecutionPolicy", "Bypass",
                                   "-File", str(holder)],
@@ -1496,10 +1500,11 @@ def test_38_ui_lock_is_exclusive() -> None:
         for _ in range(40):
             if first.poll() is not None:
                 break
-            pathlib.Path(root / "logs" / "ui.lock").exists()
             try:
-                with open(root / "logs" / "ui.lock", "r+b"):
+                with open(lock_path, "r+b"):
                     pass          # still free? keep waiting
+            except FileNotFoundError:
+                pass              # the holder has not created it yet
             except OSError:
                 break         # held
             time.sleep(0.05)
